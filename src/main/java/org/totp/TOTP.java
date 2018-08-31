@@ -105,12 +105,12 @@ public class TOTP extends AbstractMessageTransformer {
 		if (operation == null || operation.isEmpty()) {
 			throw new TransformerException(
 					MessageFactory
-							.createStaticMessage("Missing TOTP operation (generate|validate)"));
+							.createStaticMessage("Missing operation"));
 		}
 		if (key == null || key.isEmpty()) {
 			throw new TransformerException(
 					MessageFactory
-							.createStaticMessage("key property must contain the shared secret value"));
+							.createStaticMessage("Empty key"));
 		}
         String normalizedBase32Key = key.replace(" ", "").toUpperCase();
         Base32 base32 = new Base32();
@@ -130,19 +130,19 @@ public class TOTP extends AbstractMessageTransformer {
 				if (inbound_totp == null || inbound_totp.isEmpty()) {
 					throw new TransformerException(
 							MessageFactory
-									.createStaticMessage("Invalid TOTP token"));
+									.createStaticMessage("Empty token"));
 				}
 				if (totp.equals(inbound_totp)) {
 					return message.getPayload();
 				} else {
 					throw new TransformerException(
 							MessageFactory
-									.createStaticMessage("Invalid " + totpPropertyName));
+									.createStaticMessage("Invalid token"));
 				}
 			} else {
 				throw new TransformerException(
 						MessageFactory
-								.createStaticMessage("Missing TOTP operation (generate|validate)"));
+								.createStaticMessage("Missing operation"));
 			}
 		} catch (TransformerException e) {
 			throw e;
