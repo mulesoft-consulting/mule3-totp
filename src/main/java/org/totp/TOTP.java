@@ -87,6 +87,14 @@ public class TOTP extends AbstractMessageTransformer {
 		this.enabled = enabled;
 	}
 
+	public String getTotpPropertyName() {
+		return totpPropertyName;
+	}
+
+	public void setTotpPropertyName(String totpPropertyName) {
+		this.totpPropertyName = totpPropertyName;
+	}
+
 	@Override
 	public Object transformMessage(MuleMessage message, String encoding)
 			throws TransformerException {
