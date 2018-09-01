@@ -1,4 +1,4 @@
-#TOTP Transformer for Mule 3
+# TOTP Transformer for Mule 3
 Used to generate a time based, one time use token that is compatible with the Google Authenticator Application and similar applications.
 
 Useful for implementing a two-factor authentication scheme.
