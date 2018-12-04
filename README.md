@@ -1,5 +1,5 @@
 # TOTP Transformer for Mule 3
-Used to generate a time based, one time use token that is compatible with the Google Authenticator Application and similar applications.
+Used to generate or validate a time based, one time use token that is compatible with the Google Authenticator Application and similar applications.
 
 Useful for implementing a two-factor authentication scheme.
 
@@ -17,10 +17,10 @@ Then use the **validate** operation in the flow where token validation is to be 
 
 ```
         <custom-transformer class="org.totp.TOTP" doc:name="TOTP">
-            <spring:property name="enabled" value="${totp.enabled}"/>
+            <spring:property name="enabled" value="true"/>
             <spring:property name="operation" value="validate"/>
-            <spring:property name="key" value="${totp.key}"/>
-            <spring:property name="totpPropertyName" value="${totp.property}"/>
+            <spring:property name="key" value="navy cats rope base"/>
+            <spring:property name="totpPropertyName" value="edit_token"/>
         </custom-transformer>
 ```
 
