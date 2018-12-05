@@ -28,6 +28,6 @@ A totp token can be generated using the **generate** operation. The token will b
 
 Use **enabled** set to false if you wish to skip the token validate.
 
-**key** is required parameter value. It is the same key entered into the Google Authenicator application on you mobile device.
+**key** is required parameter value. It is the same key entered into the Google Authenicator application on you mobile device. It needs to be 16 characters (4 pairs of 4 characters).
 
 **totpPropertyName** will default to "edit_token".
